@@ -26,6 +26,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.0
         version: 4.0.9(vite@6.2.0(jiti@2.4.2)(lightningcss@1.29.1))
+      daisyui:
+        specifier: ^5.0.0
+        version: 5.0.0
       eslint:
         specifier: ^9.18.0
         version: 9.21.0(jiti@2.4.2)
@@ -660,6 +663,9 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+
+  daisyui@5.0.0:
+    resolution: {integrity: sha512-U0K9Bac3Bi3zZGm6ojrw12F0vBHTpEgf46zv/BYxLe07hF0Xnx7emIQliwaRBgJuYhY0BhwQ6wSnq5cJXHA2yA==}
 
   debug@4.4.0:
     resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
@@ -1838,6 +1844,8 @@ snapshots:
       which: 2.0.2
 
   cssesc@3.0.0: {}
+
+  daisyui@5.0.0: {}
 
   debug@4.4.0:
     dependencies:
