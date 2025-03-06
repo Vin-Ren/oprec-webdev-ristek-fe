@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {dataTheme} from '$lib/data-theme';
+    import dataTheme from '$lib/data-theme';
 </script>
 
 <div class="flex flex-col w-full h-24 justify-center items-center">
