@@ -6,9 +6,9 @@
 	let { children } = $props();
 </script>
 
-<div data-theme={$dataTheme} class="flex flex-col h-screen w-screen">
+<div data-theme={$dataTheme} class="flex flex-col min-h-screen w-screen gap-4">
 	<Header />
-	<div class="flex-1">
+	<div class="flex-1 mt-[5.5rem]">
 		{@render children()}
 	</div>
 	<Footer />
