@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { invalidate } from '$app/navigation';
+
 	let { data } = $props();
 	let message = $state('');
 
@@ -13,6 +15,7 @@
 		})
 		if (res.ok) {
 			const resData = await res.json()
+			await invalidate('user:auth-state')
 			message = resData['message']
 			data = {...data, user:null}
 		} else {

@@ -2,7 +2,7 @@
 	import '../app.css';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
-	import dataTheme from '$lib/data-theme';
+	import dataTheme from '../stores/data-theme';
 	let { children } = $props();
 </script>
 
