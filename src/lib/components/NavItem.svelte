@@ -1,15 +1,10 @@
 <script lang="ts">
-    import { page } from '$app/stores';  
+    import { page } from '$app/state';  
     let {path, title} = $props()
 </script>
 
 <li>
-    <a class="text-lg font-medium hover:opacity-80 transition group" href={path}>
+    <a class="text-lg font-medium hover:opacity-80 transition-all duration-300 group {page.url.pathname==path? 'text-accent' : ''} hover:text-accent" href={path}>
         {title}
-        {#if $page.url.pathname == path}
-        <span class="block mx-[-5%] max-w-[110%] transition-all duration-300 h-[3px] bg-accent"></span>
-        {:else}
-        <span class="block mx-[-5%] max-w-0 group-hover:max-w-[110%] transition-all duration-300 h-[3px] bg-accent"></span>
-        {/if}
     </a>
 </li>

@@ -8,7 +8,7 @@
 
 <div data-theme={$dataTheme} class="flex flex-col min-h-screen w-screen gap-4">
 	<Header />
-	<div class="flex-1 mt-[5.5rem]">
+	<div class="flex-1 mt-[4.25rem]">
 		{@render children()}
 	</div>
 	<Footer />

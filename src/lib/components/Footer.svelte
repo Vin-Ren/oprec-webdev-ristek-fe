@@ -14,7 +14,7 @@
 </script>
 
 <div class="flex flex-row w-full h-auto min-h-16 justify-center items-center border-t-2 border-primary px-4">
-    <div class="font-light flex flex-col w-full justify-start">
+    <div class="font-light text-sm flex flex-col w-full justify-start">
         <span>
             Made with ❤️ and is still floating today.
         </span>
