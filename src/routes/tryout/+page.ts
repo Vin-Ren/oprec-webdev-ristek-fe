@@ -1,15 +1,11 @@
-import { redirect, type Load } from "@sveltejs/kit";
+import { type Load } from "@sveltejs/kit";
 import { PUBLIC_BASE_API_URL } from "$env/static/public";
 
 export const load: Load = async ({ fetch, depends }) => {
   depends('user:auth-state');
-  let res = await fetch(`${PUBLIC_BASE_API_URL}/auth/user`, {
-    credentials: 'include'
+  let res = await fetch(`${PUBLIC_BASE_API_URL}/tryout`, {
+    method: 'GET'
   });
-
-  if (!res.ok) {
-    redirect(302, '/login')
-  }
 
   const data = await res.json();
   if (!data.user.githubId) {
