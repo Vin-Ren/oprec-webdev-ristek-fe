@@ -1,10 +1,11 @@
 <script>
-	import { PUBLIC_BASE_API_URL } from "$env/static/public";
-	import { Github } from "@lucide/svelte";
+	import { PUBLIC_BASE_API_URL } from '$env/static/public';
+	import { Github } from '@lucide/svelte';
 </script>
 
-<div class="border-2 shadow-md rounded-md px-4 py-2 hover:shadow-lg transition-all hover:brightness-75">
-  <a href={`${PUBLIC_BASE_API_URL}/auth/github`} class="flex flex-row gap-4 items-center justify-center text-xl font-semibold">
-    <Github class="w-9 h-9"/> Continue with Github
-  </a>
-</div>
+<a
+	href={`${PUBLIC_BASE_API_URL}/auth/github`}
+	class="btn btn-neutral flex flex-row items-center justify-center gap-4 py-6 text-xl font-semibold transition-all"
+>
+	<Github class="h-9 w-9" /> Continue with Github
+</a>
