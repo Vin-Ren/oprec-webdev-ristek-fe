@@ -2,7 +2,7 @@
 	import { invalidate, goto } from '$app/navigation';
 	import { Github } from '@lucide/svelte';
 	import { redirect } from '@sveltejs/kit';
-  // import {}
+  import { PUBLIC_BASE_API_URL } from '$env/static/public';
 
   interface User {
     id: string,
@@ -17,17 +17,17 @@
   let githubProfile = $derived(data.githubProfile)
 
 	const logout = async () => {
-		const res = await fetch('api/auth/logout', {
+		const res = await fetch(`${PUBLIC_BASE_API_URL}/auth/logout`, {
 			method: 'POST',
 			credentials: 'include'
 		});
 		if (res.ok) {
 			const resData = await res.json();
 			await invalidate('user:auth-state');
-			message = resData['message'];
+			// message = resData['message'];
       redirect(302, '/') // Redirects to homepage
 		} else {
-			message = 'error';
+			// message = 'error';
 		}
 	};
 </script>
@@ -36,7 +36,7 @@
 <div class="flex flex-col m-4 gap-6 justify-center max-sm:items-center">
   <h1 class="text-3xl font-bold">Profile Page</h1>
   {#if user}
-  <div class="w-fit max-w-[720px] flex md:flex-row max-md:flex-col gap-4 border-3 p-5 border-primary rounded-lg">
+  <div class="w-fit max-w-[720px] flex md:flex-row max-md:flex-col gap-4 border-3 p-5 border-primary">
     <div class="w-32 h-32 avatar">
       <!-- svelte-ignore a11y_missing_attribute -->
       <img src={user.avatarUrl ?? "https://www.gravatar.com/avatar"} class="rounded-lg"/>
@@ -53,7 +53,7 @@
       {/if}
     </div>
   </div>
-  <button class="btn btn-error btn-md w-max" onclick={logout}>LOG OUT</button>
+  <button class="btn btn-error btn-md w-max rounded-[0]" onclick={logout}>LOG OUT</button>
   {:else}
   <div class="card glass">
     Not logged in

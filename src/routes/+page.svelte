@@ -9,7 +9,7 @@
       <p class="py-6 text-lg font-semibold">
         Quix is a user-friendly platform designed to streamline and enhance your preparation for various tests.
       </p>
-      <a class="btn btn-primary" href="/user">Get Started</a>
+      <a class="btn btn-primary rounded-[0]" href="/login">Get Started</a>
     </div>
   </div>
 </div>
