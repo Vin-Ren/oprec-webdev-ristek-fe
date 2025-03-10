@@ -1,5 +1,5 @@
 
-<div class="hero bg-base-100 min-h-screen">
+<div class="hero bg-base-100 min-h-screen w-full">
   <div class="hero-content text-center">
     <div class="max-w-md flex flex-col items-center mt-[-10rem]">
       <div class="flex max-sm:flex-col md:flex-row justify-start items-center w-full">

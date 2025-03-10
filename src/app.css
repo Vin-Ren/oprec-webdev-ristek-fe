@@ -2,3 +2,7 @@
 @plugin "daisyui" {
     themes: emerald --default, dracula --prefersDark;
 }
+
+* {
+  @apply rounded-[0]
+}

@@ -3,6 +3,7 @@
 	import { Github } from '@lucide/svelte';
 	import { redirect } from '@sveltejs/kit';
   import { PUBLIC_BASE_API_URL } from '$env/static/public';
+	import auth from '../../stores/auth';
 
   interface User {
     id: string,
@@ -16,6 +17,11 @@
   let user = $derived(data.user)
   let githubProfile = $derived(data.githubProfile)
 
+  $effect(() => {
+    $auth.user = data.user
+    $auth.loggedId = data.user!==null
+  })
+
 	const logout = async () => {
 		const res = await fetch(`${PUBLIC_BASE_API_URL}/auth/logout`, {
 			method: 'POST',
@@ -23,11 +29,9 @@
 		});
 		if (res.ok) {
 			const resData = await res.json();
+			$auth = {user: null, loggedId: false};
 			await invalidate('user:auth-state');
-			// message = resData['message'];
       redirect(302, '/') // Redirects to homepage
-		} else {
-			// message = 'error';
 		}
 	};
 </script>

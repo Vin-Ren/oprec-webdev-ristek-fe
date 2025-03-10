@@ -7,7 +7,7 @@
 	<div class="flex flex-row w-full mx-4 gap-6">
         <a href="/">
             <div class="logo flex flex-row justify-center items-center h-full mb-1 group transition-all">
-                <img src="logo.png" alt="Logo" class="w-14 group-hover:opacity-80 transition-all duration-300"/> 
+                <img src="/logo.png" alt="Logo" class="w-14 group-hover:opacity-80 transition-all duration-300"/> 
 				<span class="font-serif font-bold text-3xl group-hover:opacity-80 transition-all duration-300 max-sm:hidden">Quix</span>
             </div>
         </a>
