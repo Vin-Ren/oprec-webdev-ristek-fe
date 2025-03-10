@@ -6,7 +6,7 @@ Make sure to have pnpm installed, then run:
 pnpm install
 ```
 
-Then, copy the sample [.env.sample](./.env.sample) to `.env` in this directory and change the configurations as needed.
+Then, copy the sample [.env.example](./.env.example) to `.env` in this directory and change the PULBIC API URL according to your backend deployment url.
 
 
 ## Development
