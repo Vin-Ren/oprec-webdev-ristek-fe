@@ -4,6 +4,7 @@
   import { page } from '$app/state';  
   import DateInput from "$lib/components/DateInput.svelte";
 	import type { UpdateTryoutParams } from "$lib/types/tryout";
+	import toast from "@natoune/svelte-daisyui-toast";
 
   let {data} = $props()
 
@@ -26,7 +27,8 @@
   });
 
 
-  const update = async () => {
+  const update = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault()
     const res = await fetch(`${PUBLIC_BASE_API_URL}/tryout/${page.params.id}`, {
       method: 'PUT',
       headers: {
@@ -47,9 +49,10 @@
     if (!res.ok) {
       const errorData = await res.json();
       console.error('Error:', errorData);
+      toast.error(`Something went wrong when trying to create a tryout!\nError: ${errorData?.error?.[0].message || "No Error Message."}`)
     } else {
-      // handle success (optional)
       const responseData = await res.json();
+      toast.success("Successfully updated tryout!")
       goto(`/tryout/${responseData.tryout.id}`)
     }
   }

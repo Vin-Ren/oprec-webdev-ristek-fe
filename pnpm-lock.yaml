@@ -11,6 +11,9 @@ importers:
       '@lucide/svelte':
         specifier: ^0.479.0
         version: 0.479.0(svelte@5.22.3)
+      '@natoune/svelte-daisyui-toast':
+        specifier: ^1.1.1
+        version: 1.1.1(svelte@5.22.3)
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.5
@@ -314,6 +317,11 @@ packages:
     resolution: {integrity: sha512-k/JaO8FHvmK7GLCy9vibA7O1a9nCtlfIs0tU/yYlmkqykVEvz9NRFkpR8g2kbsc79uFVz0Q2tjnRC09vd9AxmA==}
     peerDependencies:
       svelte: ^5
+
+  '@natoune/svelte-daisyui-toast@1.1.1':
+    resolution: {integrity: sha512-d52bPhoadhDiXkh9qkw0BhFq9GC7BFRYcrzYouGXouZ3he7jKb+To1yDAnjrjjVmHPL++yeNP9YXuXmD3TSH9w==}
+    peerDependencies:
+      svelte: ^5.0.0
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1523,6 +1531,10 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
 
   '@lucide/svelte@0.479.0(svelte@5.22.3)':
+    dependencies:
+      svelte: 5.22.3
+
+  '@natoune/svelte-daisyui-toast@1.1.1(svelte@5.22.3)':
     dependencies:
       svelte: 5.22.3
 

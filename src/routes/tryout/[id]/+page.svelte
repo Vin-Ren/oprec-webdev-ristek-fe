@@ -5,6 +5,7 @@
 	import { PUBLIC_BASE_API_URL } from '$env/static/public';
   import { page } from '$app/state';  
 	import { goto } from '$app/navigation';
+	import toast from '@natoune/svelte-daisyui-toast';
 
 	let { data } = $props();
 	let tryout = $derived(data.tryout);
@@ -24,7 +25,10 @@
     })
 
     if (res.ok) {
+      toast.success("Successfully deleted the tryout!")
       goto('/tryout')
+    } else {
+      toast.error("Something went wrong when trying to delete the tryout.")
     }
   }
 </script>

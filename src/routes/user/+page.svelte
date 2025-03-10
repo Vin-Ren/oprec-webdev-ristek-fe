@@ -3,15 +3,8 @@
 	import { Github } from '@lucide/svelte';
 	import { redirect } from '@sveltejs/kit';
   import { PUBLIC_BASE_API_URL } from '$env/static/public';
-	import auth from '../../stores/auth';
-
-  interface User {
-    id: string,
-    username: string,
-    avatarUrl: string,
-    githubId: string|null,
-    role: string
-  }
+	import auth, { type User } from '../../stores/auth';
+	import toast from '@natoune/svelte-daisyui-toast';
 
 	let { data }: {data: {user: User|null, githubProfile?: {login: string, html_url: string}}} = $props();
   let user = $derived(data.user)
@@ -28,11 +21,14 @@
 			credentials: 'include'
 		});
 		if (res.ok) {
-			const resData = await res.json();
+      await res.json();
 			$auth = {user: null, loggedId: false};
+      toast.success("Successfully logged out!")
 			await invalidate('user:auth-state');
       redirect(302, '/') // Redirects to homepage
-		}
+		} else {
+      toast.error("Something went wrong when trying to log you out...")
+    }
 	};
 </script>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Plus } from '@lucide/svelte';
-import TryoutEntry from '../components/TryoutEntry.svelte';
+  import TryoutEntry from '../components/TryoutEntry.svelte';
 
 	const { data } = $props();
 </script>

@@ -3,6 +3,8 @@
     themes: emerald --default, dracula --prefersDark;
 }
 
+@source "../node_modules/.pnpm/@natoune+svelte-daisyui-toast@1.1.1_svelte@5.22.3/node_modules/@natoune/svelte-daisyui-toast/dist";
+
 * {
   @apply rounded-[0]
 }

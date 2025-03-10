@@ -6,6 +6,7 @@
 	import { PUBLIC_BASE_API_URL } from '$env/static/public';
 	import auth from '../stores/auth';
 	import { onMount } from 'svelte';
+	import { Toaster } from '@natoune/svelte-daisyui-toast';
 	let { children } = $props();
 
 
@@ -35,4 +36,5 @@
 		{@render children()}
 	</div>
 	<Footer />
+  <Toaster zIndex={100}/>
 </div>
