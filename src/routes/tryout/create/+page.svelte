@@ -23,7 +23,7 @@
     passphrase: ""
   });
 
-  const create = async (e) => {
+  const create = async (e: { preventDefault: () => void; }) => {
     e.preventDefault()
     const res = await fetch(`${PUBLIC_BASE_API_URL}/tryout`, {
       method: 'POST',
